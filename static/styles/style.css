@@ -1,0 +1,65 @@
+:root {
+    --primary-color__black: rgba(0, 0, 0, 0.5);
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.welcome-sign {
+    margin-top: 17rem;
+}
+
+.about-section__list {
+    max-width: 15rem;
+    border-radius: 1.5rem;
+}
+
+header {
+    background-color: var(--primary-color__black);
+}
+
+.primary__background {
+    background-image: url('../img/1639996249_f1eda4768df8d8135c779772f2833e88.gif');
+    background-position: center;
+    background-size: cover;
+}
+
+.about-section__description {
+    max-width: 45rem;
+}
+
+.about-section__advantages {
+    border-radius: 1.5rem;
+}
+.primary-text__background {
+    background-color: var(--primary-color__black);
+    border-radius: 1.5rem;
+}
+
+.about-section__background {
+    background-color: var(--primary-color__black);
+}
+
+@media (max-width: 48rem) {
+    .header__button {
+        display: block;
+    }
+    .header__link {
+        display: none;
+    }
+    .primary-text__background {
+        max-width: 20rem;
+    }
+}
+
+@media (max-width: 65rem) {
+    .about-section__container {
+        max-width: 40rem;
+        margin: 0 auto;
+    }
+}
