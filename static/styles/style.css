@@ -1,5 +1,11 @@
 :root {
-    --primary-color__black: rgba(0, 0, 0, 0.5);
+    --primary-color__transparent-black: rgba(0, 0, 0, 0.5);
+    --primary-color__black: rgb(22, 21, 21);
+    --primary-color__blue: rgb(0, 9, 128);
+}
+
+.body__background {
+    background-color: var(--primary-color__blue);
 }
 
 ul {
@@ -20,7 +26,25 @@ a {
 }
 
 header {
+    background-color: var(--primary-color__transparent-black);
+}
+
+.about-section__background {
+    background-color: var(--primary-color__transparent-black);
+}
+
+.primary-text__background {
+    background-color: var(--primary-color__transparent-black);
+    border-radius: 1.5rem;
+}
+
+footer {
     background-color: var(--primary-color__black);
+    height: 25vh;
+}
+
+.about-section {
+    height: 75vh;
 }
 
 .primary__background {
@@ -36,14 +60,6 @@ header {
 .about-section__advantages {
     border-radius: 1.5rem;
 }
-.primary-text__background {
-    background-color: var(--primary-color__black);
-    border-radius: 1.5rem;
-}
-
-.about-section__background {
-    background-color: var(--primary-color__black);
-}
 
 @media (max-width: 48rem) {
     .header__button {
@@ -55,6 +71,9 @@ header {
     .primary-text__background {
         max-width: 20rem;
     }
+    .about-section__logotype {
+        width: 20rem;
+    }
 }
 
 @media (max-width: 65rem) {
@@ -63,3 +82,17 @@ header {
         margin: 0 auto;
     }
 }
+
+/* Элементы будут изначально скрыты */
+.animate {
+    opacity: 0;
+    transform: translateY(1.25rem); /* Небольшой сдвиг вниз */
+    transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+  }
+  
+  /* Анимация после появления на экране */
+  .animate.show {
+    opacity: 1;
+    transform: translateY(0); /* Возвращение в исходное положение */
+  }
+  

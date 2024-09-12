@@ -9,7 +9,7 @@
      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <nav-link text-decoration-none></nav-link>
 </head>
-<body class="bg-primary text-light">
+<body class="body__background text-light">
     <header class="header w-100 h-auto navbar position-absolute">
         <h1 class="ms-2 my-3"><a class="text-light" href="index.html">Киберполигон</a></h1>
         <div class="text-light">
@@ -29,9 +29,11 @@
                  специалистов по кибер-безопасности.</p>            
         </div>
     </main>
-    <section class="text-center justify-content-center align-items-center mt-5">
+    <section class="text-center justify-content-center align-items-center mt-5 animate about-section">
+        <img src="../static/img/polytech-logo-png.png" alt="Логотип Московского Политехнического Университета" class="about-section__logotype" width="550rem">
         <h3>О нас</h3>
-        <p class="about-section__description justify-content-center align-items-center m-auto">Мы — команда Московского Политехнического Университета. Мы создаем площадку для обеспечения практического обучения и подготовки специалистов
+        <p class="about-section__description justify-content-center align-items-center m-auto">Мы — команда Московского Политехнического Университета.
+             Мы создаем площадку для обеспечения практического обучения и подготовки специалистов
              в области кибербезопасности, проведения исследований и разработок, повышения безопасности систем и сетей, улучшения навыков преподавателей, 
              сотрудничества с отраслью, повышения осведомленности и подготовки киберспециалистов.</p>
         <h3 class="mt-5">Наши преимущества</h3>
@@ -42,7 +44,8 @@
             </div>
             <div class="about-section__list about-section__background">
                 <h4>Обучение от экспертов</h4>
-                <p class="align-content-center">Наши тренеры — профессионалы с многолетним опытом в области кибербезопасности, которые делятся практическими знаниями и последними тенденциями в отрасли.</p>
+                <p class="align-content-center">Наши тренеры — профессионалы с многолетним опытом в области кибербезопасности, которые делятся практическими знаниями
+                     и последними тенденциями в отрасли.</p>
             </div>
             <div class="about-section__list about-section__background">
                 <h4>Интерактивная платформа</h4>
@@ -54,6 +57,27 @@
             </div>
         </div>
     </section>
+    <footer class="w-100 h-auto navbar position-absolute mt-5 p-5">
+        <p class="mt-5">© 2024 Киберполигон</p>   
+        <div class="d-flex flex-column">
+        <p class="m-auto justify-content-center mb-3">Контактная информация</p>
+            <address class="d-flex flex-row gap-2">
+                <a href="tel:+79885024344"><img src="../static/img/accept-phone-icon-social-icon-set-png.webp" alt="" width="40rem"></a>
+                <p class="m-2">+79885024344</p>
+                <p class="m-2">|</p>
+                <a href="mailto:polytech@polytech.ru"><img src="../static/img/112-gmail_email_mail-512.webp" alt="" width="40rem"></a>
+                <p class="m-2">polytech@polytech.ru</p>
+            </address>    
+        </div>
+        <div class="d-flex flex-column">
+            <p class="m-auto justify-content-center mb-3">Мы в соц. сетях</p>
+            <address class="d-flex flex-row gap-2">
+            <a href="https://t.me/beloarte"><img src="../static/img/Telegram_logo.svg.webp" alt="Логотип Телеграм" width="40rem"></a>
+            <a href=""><img src="../static/img/VK_Compact_Logo_(2021-present).svg.png" alt="Логотип ВК" width="40rem"></a>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="mt-1"><img src="../static/img/Youtube_logo.png" alt="Логотип Ютуб" width="45rem"></a>           
+            </address>
+        </div>
+    </footer>
 </body>
 <script src="../static/scripts/main.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" 
