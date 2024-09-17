@@ -16,7 +16,7 @@ window.addEventListener('scroll', onScroll);
 window.onload = onScroll;
 
 
-// Скрипт для того, чтобы показать пароля
+// Скрипт для того, чтобы показывать пароли
 const passwordInput = document.getElementById('password');
 const showPasswordCheckbox = document.getElementById('showPassword');
 

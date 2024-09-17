@@ -10,147 +10,43 @@
     <nav-link text-decoration-none></nav-link>
 </head>
 <body class="body__background text-light">
-    <header class="header w-100 h-auto navbar position-absolute">
+    <nav class="w-100 h-auto navbar position-absolute navbar navbar-expand-md ">
         <h1 class="ms-2 my-3"><a class="text-light" href="index.html">Киберполигон</a></h1>
-        <div class="text-light">
-            <a href="index.html" class="g-xxl-5 text-light header__link">Главная</a>
-            <a href="" class="text-light header__link">Новости</a>
-            <a href="" class="text-light header__link">Курсы</a>
-            <a href="" class="text-light header__link">Тренировка</a>
-            <a href="" class="text-light header__link">Ресурсы</a>
-            <button class="btn text-decoration-underline text-light p-0 mb-1 me-2 header__link" data-bs-toggle="modal" data-bs-target="#loginModal">Войти</button>
-            <button type="button" class="border-0 btn btn-outline-light d-md-none" data-bs-toggle="modal" data-bs-target="#main__menu">
-                <img src="../static/img/menu-button.png" width="40rem"></button>              
-        </div>
-    </header>
-    <!-- Тут только окно меню для планшетов/мобилок и окно регистрации -->
-    <div class="modal fade" id="main__menu" tabindex="-1" aria-labelledby="main__menu-label" aria-hidden="true">
-        <div class="modal-dialog modal-fullscreen">
-        <div class="modal-content bg-dark">
-            <div class="modal-header">
-                <h1><a class="text-light" href="index.html">Киберполигон</a></h1>
-                <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <ul class="list-group">
-                    <li class="list-group-item"><a href="index.html" class="">Главная</a></li>
-                    <li class="list-group-item"><a href="">Новости</a></li>
-                    <li class="list-group-item"><a href="">Курсы</a></li>
-                    <li class="list-group-item"><a href="">Тренировка</a></li>
-                    <li class="list-group-item"><a href="">Ресурсы</a></li>
-                    <li class="list-group-item"><a href="">Войти</a></li>
-                </ul>
-            </div>
-        </div>
-        </div>
-    </div>
-    <!-- Конец окна меню для планшетов/мобилок -->
-    <!-- Форма регистрации -->
-    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content bg-dark">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="loginModalLabel">Вход</h5>
-                    <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                <!-- Форма входа -->
-                    <form>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Введите Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="example@domain.com" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Введите Пароль</label>
-                            <input type="password" class="form-control" id="password" placeholder="Введите пароль" required>
-                        </div>
-                        <div class="form-check mb-3">
-                            <input type="checkbox" class="form-check-input" id="showPassword">
-                            <label class="form-check-label" for="showPassword">Показать пароль</label>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100">Войти</button>
-                    </form>
-                </div>
-                <div class="modal-footer d-flex flex-column justify-content-center">
-                    <a href="#" class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#resetPasswordModal" data-bs-dismiss="modal">Забыли пароль?</a>
-                    <p class="mb-0">Нет аккаунта? <a href="#" class="text-decoration-none" data-bs-toggle="modal" 
-                        data-bs-target="#registrationModal" data-bs-dismiss="modal">Зарегистрироваться</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
-      <!-- Модальное окно Регистрация -->
-  <div class="modal fade" id="registrationModal" tabindex="-1" aria-labelledby="registrationModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content bg-dark">
-        <div class="modal-header">
-          <h5 class="modal-title" id="registrationModalLabel">Регистрация</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="mb-3">
-              <label for="username" class="form-label">Введите Имя пользователя</label>
-              <input type="text" class="form-control" id="username" placeholder="Введите ваше имя" required>
-            </div>
-            <div class="mb-3">
-              <label for="registerEmail" class="form-label">Введите ваш Email</label>
-              <input type="email" class="form-control" id="registerEmail" placeholder="example@domain.com" required>
-            </div>
-            <div class="mb-3">
-              <label for="registerPassword" class="form-label">Введите Пароль</label>
-              <input type="password" class="form-control" id="registerPassword" placeholder="Введите пароль" required>
-            </div>
-            <div class="mb-3">
-              <label for="confirmPassword" class="form-label">Введите Пароль еще раз</label>
-              <input type="password" class="form-control" id="confirmPassword" placeholder="Повторите пароль" required>
-            </div>
-            <button type="submit" class="btn btn-primary w-100">Зарегистрироваться</button>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">Вернуться ко входу</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Модальное окно Восстановление пароля -->
-  <div class="modal fade" id="resetPasswordModal" tabindex="-1" aria-labelledby="resetPasswordModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content bg-dark">
-        <div class="modal-header">
-          <h5 class="modal-title" id="resetPasswordModalLabel">Восстановление пароля</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="mb-3">
-              <label for="resetEmail" class="form-label">Введите ваш email</label>
-              <input type="email" class="form-control" id="resetEmail" placeholder="example@domain.com" required>
-            </div>
-            <button type="submit" class="btn btn-primary w-100">Отправить</button>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">Вернуться ко входу</button>
-        </div>
-      </div>
-    </div>
-  </div>
-    <!-- Конец тут -->
-    <main class="d-flex justify-content-center align-items-center primary__background" style="height: 100vh;">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="border-0"><img src="../static/img/menu-button.png" width="40rem"></span>
+          </button>
+          <div class="collapse navbar-collapse ms-2" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link text-light" aria-current="page" href="index.html">Главная</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="training.html">Тренировка</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="courses.html">Курсы</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="">Ресурсы</a>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link text-decoration-underline text-light me-2 btn" data-bs-toggle="modal" data-bs-target="#loginModal">Войти</button>
+              </li>
+            </ul>
+          </div>
+    </nav>
+    <header class="d-flex justify-content-center align-items-center primary__background" style="height: 100vh;">
         <div class="text-center primary-text__background p-3">
             <h2>Добро пожаловать на Киберполигон!</h2>
             <p>Киберполигон - это место для обучения и тренировки
                  специалистов по кибер-безопасности.</p>            
         </div>
-    </main>
+    </header>
     <!-- Секция о нас -->
-    <section class="text-center justify-content-center align-items-center mt-5 animate about-section">
+    <main class="text-center justify-content-center align-items-center mt-5 animate about-section">
         <img src="../static/img/polytech-logo-png.png" alt="Логотип Московского Политехнического Университета" class="about-section__logotype" width="550rem">
         <h3>О нас</h3>
-        <p class="about-section__description justify-content-center align-items-center m-auto">Мы — команда Московского Политехнического Университета.
+        <p class="about-section__description justify-content-center align-items-center m-auto lead">Мы — команда Московского Политехнического Университета.
              Мы создаем площадку для обеспечения практического обучения и подготовки специалистов
              в области кибербезопасности, проведения исследований и разработок, повышения безопасности систем и сетей, улучшения навыков преподавателей, 
              сотрудничества с отраслью, повышения осведомленности и подготовки киберспециалистов.</p>
@@ -174,7 +70,7 @@
                 <p class="align-content-center">Мы предлагаем курсы как для новичков, так и для опытных специалистов, что позволяет каждому обучающемуся расти в своем темпе.</p>
             </div>
         </div>
-    </section>
+    </main>
     <footer class="w-100 h-auto mt-5 p-5">
         <div class="navbar footer__container">
             <p class="mt-5 footer__container-cyberpoligon">© 2024 Киберполигон</p>   
@@ -199,6 +95,100 @@
         </div>
     </footer>
 </body>
+<!-- Форма регистрации -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark">
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginModalLabel">Вход</h5>
+                <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            <!-- Форма входа -->
+                <form>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Введите Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="example@domain.com" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Введите Пароль</label>
+                        <input type="password" class="form-control" id="password" placeholder="Введите пароль" required>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input type="checkbox" class="form-check-input" id="showPassword">
+                        <label class="form-check-label" for="showPassword">Показать пароль</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Войти</button>
+                </form>
+            </div>
+            <div class="modal-footer d-flex flex-column justify-content-center">
+                <a href="#" class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#resetPasswordModal" data-bs-dismiss="modal">Забыли пароль?</a>
+                <p class="mb-0">Нет аккаунта? <a href="#" class="text-decoration-none" data-bs-toggle="modal" 
+                    data-bs-target="#registrationModal" data-bs-dismiss="modal">Зарегистрироваться</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+  <!-- Модальное окно Регистрация -->
+<div class="modal fade" id="registrationModal" tabindex="-1" aria-labelledby="registrationModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+  <div class="modal-content bg-dark">
+    <div class="modal-header">
+      <h5 class="modal-title" id="registrationModalLabel">Регистрация</h5>
+      <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="mb-3">
+          <label for="username" class="form-label">Введите Имя пользователя</label>
+          <input type="text" class="form-control" id="username" placeholder="Введите ваше имя" required>
+        </div>
+        <div class="mb-3">
+          <label for="registerEmail" class="form-label">Введите ваш Email</label>
+          <input type="email" class="form-control" id="registerEmail" placeholder="example@domain.com" required>
+        </div>
+        <div class="mb-3">
+          <label for="registerPassword" class="form-label">Введите Пароль</label>
+          <input type="password" class="form-control" id="registerPassword" placeholder="Введите пароль" required>
+        </div>
+        <div class="mb-3">
+          <label for="confirmPassword" class="form-label">Введите Пароль еще раз</label>
+          <input type="password" class="form-control" id="confirmPassword" placeholder="Повторите пароль" required>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Зарегистрироваться</button>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">Вернуться ко входу</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Модальное окно Восстановление пароля -->
+<div class="modal fade" id="resetPasswordModal" tabindex="-1" aria-labelledby="resetPasswordModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+  <div class="modal-content bg-dark">
+    <div class="modal-header">
+      <h5 class="modal-title" id="resetPasswordModalLabel">Восстановление пароля</h5>
+      <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="mb-3">
+          <label for="resetEmail" class="form-label">Введите ваш email</label>
+          <input type="email" class="form-control" id="resetEmail" placeholder="example@domain.com" required>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Отправить</button>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">Вернуться ко входу</button>
+    </div>
+  </div>
+</div>
+</div>
+<!-- Конец тут -->
 <script src="../static/scripts/main.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" 
 integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
