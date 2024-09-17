@@ -72,23 +72,12 @@ footer {
     }
 }
 
-@media (max-width: 41.313rem) {
-    .footer__container-cyberpoligon {
-        justify-content: center;
-        margin: 0 auto;
-    }
-    .footer__container-information {
-        justify-content: center;
-        margin: 0 auto;  
-    }
-}
-
 @media (max-width: 48rem) {
     .header__button {
         display: block;
     }
     .header__link {
-        display: none;
+        display: none !important;
     }
     .primary-text__background {
         max-width: 20rem;
@@ -106,6 +95,18 @@ footer {
         max-width: 35rem;
         justify-content: center;
         margin: 0 auto;
+    }
+    .footer__container-cyberpoligon {
+        justify-content: center;
+        margin: 0 auto;
+    }
+    .footer__container-information {
+        justify-content: center;
+        margin: 0 auto;  
+    }
+    .footer__container-social-media {
+        justify-content: center;
+        margin: 0 auto;  
     }
 }
 

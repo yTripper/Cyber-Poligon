@@ -14,3 +14,16 @@ function onScroll() {
 
 window.addEventListener('scroll', onScroll);
 window.onload = onScroll;
+
+
+// Скрипт для того, чтобы показать пароля
+const passwordInput = document.getElementById('password');
+const showPasswordCheckbox = document.getElementById('showPassword');
+
+showPasswordCheckbox.addEventListener('change', () => {
+  if (showPasswordCheckbox.checked) {
+    passwordInput.type = 'text';
+  } else {
+    passwordInput.type = 'password';
+  }
+});
