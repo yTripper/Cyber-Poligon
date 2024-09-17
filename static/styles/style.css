@@ -23,13 +23,10 @@ a {
 .about-section__list {
     max-width: 15rem;
     border-radius: 1.5rem;
-}
-
-header {
     background-color: var(--primary-color__transparent-black);
 }
 
-.about-section__background {
+header {
     background-color: var(--primary-color__transparent-black);
 }
 
@@ -102,10 +99,11 @@ footer {
 }
 
 @media (max-width: 53.5rem) {
-    .footer {
+    footer {
         padding: 3rem 0;
     }
-    .footer__container-social-media {
+    .footer__container {
+        max-width: 35rem;
         justify-content: center;
         margin: 0 auto;
     }
@@ -118,16 +116,14 @@ footer {
     }
 }
 
-/* Элементы будут изначально скрыты */
 .animate {
     opacity: 0;
-    transform: translateY(1.25rem); /* Небольшой сдвиг вниз */
+    transform: translateY(1.25rem);
     transition: opacity 0.9s ease-out, transform 0.9s ease-out;
   }
   
-  /* Анимация после появления на экране */
   .animate.show {
     opacity: 1;
-    transform: translateY(0); /* Возвращение в исходное положение */
+    transform: translateY(0);
   }
   
