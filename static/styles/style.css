@@ -123,7 +123,34 @@ footer {
     transition: opacity 0.9s ease-out, transform 0.9s ease-out;
   }
   
-  .animate.show {
+.animate.show {
     opacity: 1;
     transform: translateY(0);
-  }
+}
+
+/* Личный кабинет */
+
+.avatar-upload {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.avatar-preview {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #ddd;
+    background-color: #f0f0f0;
+    background-size: cover;
+    background-position: center;
+}
+.avatar-input {
+    display: none;
+}
+.avatar-label {
+    margin-top: 10px;
+    text-align: center;
+    cursor: pointer;
+    color: #007bff;
+}

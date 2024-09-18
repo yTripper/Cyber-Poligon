@@ -115,3 +115,16 @@ function closeModal(modalId) {
 document.querySelector('#loginModal form').addEventListener('submit', login);
 document.querySelector('#registrationModal form').addEventListener('submit', register);
 document.querySelector('#resetPasswordModal form').addEventListener('submit', forgotPassword);
+
+// Загрузка аватара для личного кабинета
+
+document.getElementById('avatarInput').addEventListener('change', function() {
+    const file = this.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        document.getElementById('avatarPreview').style.backgroundImage = 'url(' + e.target.result + ')';
+      }
+      reader.readAsDataURL(file);
+    }
+  });
