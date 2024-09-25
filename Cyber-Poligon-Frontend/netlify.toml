@@ -1,0 +1,7 @@
+[build]
+  publish = "templates"
+
+[[redirects]]
+  from = "/static/*"
+  to = "/static/:splat"
+  status = 200
