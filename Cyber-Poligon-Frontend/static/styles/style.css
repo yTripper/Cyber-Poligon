@@ -154,3 +154,11 @@ footer {
     cursor: pointer;
     color: #007bff;
 }
+
+/* resources__article.html */
+
+.card-img-top {
+    height: 200px; /* Задаем фиксированную высоту для всех изображений */
+    object-fit: cover; /* Обрезаем изображение, чтобы оно вписалось в указанный размер */
+  }
+  
