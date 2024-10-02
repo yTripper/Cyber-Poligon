@@ -150,10 +150,11 @@
           <div class="article-image d-flex justify-content-center mx-auto">
             <img src="../static/img/articles/fishing/pic4.png" alt="Пример фишинга">
           </div>
-          <ul>
-            <li class="text-danger"><strong>Да</strong></li>
-            <li class="text-success"><strong>Нет</strong></li>
-          </ul>
+          <div class="options">
+            <button class="btn btn-primary" onclick="checkAnswer(this, false, 'Неверно! Обратите внимание на источник.')">Да</button>
+            <button class="btn btn-primary" onclick="checkAnswer(this, true, 'Верно! Это безопасно.')">Нет</button>
+            <p class="explanation" style="display: none;"></p>
+          </div>
           <h3>Задание на проверку веб-сайтов:</h3>
           <p>Предоставить участникам несколько URL-адресов и попросить их определить, какие из них могут быть фишинговыми.
              URL-адреса могут содержать подозрительные домены, опечатки или несоответствие ожидаемым источникам.</p>
@@ -162,11 +163,12 @@
           <div class="article-image d-flex justify-content-center mx-auto">
             <img src="../static/img/articles/fishing/pic5.png" alt="Пример фишинга">
           </div>
-          <ul>
-            <li class="text-danger"><strong>Да</strong></li>
-            <li><strong class="text-success">Нет</strong>(Верно. Если в адресной строке протокол HTTP, информацию с карты указывать крайне небезопасно. 
-                 Следите, чтобы использовался протокол HTTPS — тот же HTTP, но с надстройкой шифрования.)</li>
-          </ul>
+          <div class="options">
+            <button class="btn btn-primary" onclick="checkAnswer(this, false, 'Неверно! Если в адресной строке протокол HTTP, информацию с карты указывать крайне небезопасно. Следите, чтобы использовался протокол HTTPS — тот же HTTP, но с надстройкой шифрования.')">Да</button>
+            <button class="btn btn-primary" onclick="checkAnswer(this, true,
+             'Верно! Если в адресной строке протокол HTTP, информацию с карты указывать крайне небезопасно. Следите, чтобы использовался протокол HTTPS — тот же HTTP, но с надстройкой шифрования.')">Нет</button>
+            <p class="explanation" style="display: none;"></p>
+          </div>
           <h3>Задание по анализу сообщений в мессенджерах:</h3>
           <p>Предоставить участникам несколько сообщений из мессенджеров и попросить их определить, какие из них могут быть фишинговыми.
             Сообщения могут содержать просьбы о предоставлении личной информации, финансовой помощи или выполнении подозрительных действий.
@@ -176,21 +178,22 @@
           <div class="article-image d-flex justify-content-center mx-auto">
             <img src="../static/img/articles/fishing/pic6.png" alt="Пример фишинга">
           </div>
-          <ul>
-            <li><strong class="text-success">Да</strong> (Возможно, друга взломали и ссылка мошенническая. Задайте пару личных вопросов, 
-              на которые злоумышленник не знает ответа, чтобы исключить эту вероятность.)</li>
-            <li class="text-danger"><strong>Нет</strong></li>
-          </ul>
+          <div class="options">
+            <button class="btn btn-primary" onclick="checkAnswer(this, true, 'Верно! Возможно, друга взломали и ссылка мошенническая. Задайте пару личных вопросов, на которые злоумышленник не знает ответа, чтобы исключить эту вероятность.')">Да</button>
+            <button class="btn btn-primary" onclick="checkAnswer(this, false, 'Неверно! Оно может быть опасно. Возможно, друга взломали и ссылка мошенническая. Задайте пару личных вопросов, на которые злоумышленник не знает ответа, чтобы исключить эту вероятность.')">Нет</button>
+            <p class="explanation" style="display: none;"></p>
+          </div>
           <h4>Задание 2.</h4>
           <p>Вы забыли свой пароль от Twitter и решили его сбросить. Вскоре вам приходит письмо. Оно кажется подозрительным. Или нет?</p>
           <div class="article-image d-flex justify-content-center mx-auto">
             <img src="../static/img/articles/fishing/pic7.png" alt="Пример фишинга">
           </div>
-          <ul>
-            <li class="text-danger"><strong>Да</strong></li>
-            <li><strong class="text-success">Нет</strong>(Обычное письмо. Если навести курсор на ссылку, виден корректный
-               адрес twitter.com. Отправитель тоже подозрений не вызывает. Так что можно жать на кнопку без опасений)</li>
-          </ul>
+          <div class="options">
+            <button class="btn btn-primary" onclick="checkAnswer(this, false, 'Неверно! Обычное письмо. Если навести курсор на ссылку, виден корректный адрес twitter.com. Отправитель тоже подозрений не вызывает. Так что можно жать на кнопку без опасений')">Да</button>
+            <button class="btn btn-primary" onclick="checkAnswer(this, true,
+             'Верно! Обычное письмо. Если навести курсор на ссылку, виден корректный адрес twitter.com. Отправитель тоже подозрений не вызывает. Так что можно жать на кнопку без опасений')">Нет</button>
+            <p class="explanation" style="display: none;"></p>
+          </div>
           <h3>Задание на анализ сценариев социального фишинга:</h3>
           <p>Предоставить участникам несколько сценариев взаимодействия в социальных сетях
              или по телефону и попросить их определить, какие из них могут быть попытками социального фишинга.</p>
@@ -200,20 +203,26 @@
           <div class="article-image d-flex justify-content-center mx-auto">
             <img src="../static/img/articles/fishing/pic8.png" alt="Пример фишинга">
           </div>
-          <ul>
-            <li><strong class="text-success">Да</strong> (Мошенники попытались бы получить у вас данные или заставить перейти по ссылке. Здесь вы будете общаться напрямую с банком.)</li>
-            <li class="text-danger"><strong>Нет</strong></li>
-          </ul>
+          <div class="options">
+            <button class="btn btn-primary" onclick="checkAnswer(this, true, 'Верно! Мошенники попытались бы получить у вас данные или заставить перейти по ссылке. Здесь вы будете общаться напрямую с банком.')">Да</button>
+            <button class="btn btn-primary" onclick="checkAnswer(this, false, 'Неверно! Мошенники попытались бы получить у вас данные или заставить перейти по ссылке. Здесь вы будете общаться напрямую с банком.')">Нет</button>
+            <p class="explanation" style="display: none;"></p>
+          </div>
           <h4>Задание 2.</h4>
           <p>Вы продаёте велосипед через интернет. Вам приходит СМС. Пройдёте по ссылке, чтобы посмотреть, что вам предлагают?</p>
           <div class="article-image d-flex justify-content-center mx-auto">
             <img src="../static/img/articles/fishing/pic9.jpg" alt="Пример фишинга">
           </div>
-          <ul>
-            <li class="text-danger"><strong>Да</strong></li>
-            <li><strong class="text-success">Нет</strong> (Точно. Одного перехода по ссылке достаточно, чтобы занести на телефон вирус.
-               А это прямая угроза вашим деньгам. Тем более вы не собирались меняться.)</li>
-          </ul>
+          <div class="options">
+            <button class="btn btn-primary" onclick="checkAnswer(this, false, 'Неверно! Одного перехода по ссылке достаточно, чтобы занести на телефон вирус. А это прямая угроза вашим деньгам. Тем более вы не собирались меняться.')">Да</button>
+            <button class="btn btn-primary" onclick="checkAnswer(this, true, 'Верно! Одного перехода по ссылке достаточно, чтобы занести на телефон вирус. А это прямая угроза вашим деньгам. Тем более вы не собирались меняться.')">Нет</button>
+            <p class="explanation" style="display: none;"></p>
+          </div>
+
+          <!-- Итоговый результат -->
+          <h3>Итоговый результат:</h3>
+          <p id="result" class="">Правильные ответы: 0</p>
+
           <h3>Примеры фишинга:</h3>
           <div class="article-image d-flex justify-content-center mx-auto">
             <img src="../static/img/articles/fishing/pic10.png" alt="Пример фишинга">
@@ -365,7 +374,7 @@
   </div>
   </div>
   <!-- Конец тут -->
-
+<script src="../static/scripts/test.js"></script>
 <script src="../static/scripts/main.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
