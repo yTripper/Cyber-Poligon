@@ -128,7 +128,10 @@
           </ul>
           <h3>Тесты</h3>
           <h4>Тест 1</h4>
-          <p>Решено: <span id="test1-result"></span></p>                
+          <p>Решено:</p>
+          <ul id="resultsList">
+            <!-- Здесь будут отображены результаты -->
+          </ul>                
         </div>
         
       </div>
@@ -156,6 +159,62 @@
           </div>
       </div>
   </footer>
+  <script>
+    function displayTestResults() {
+        if (db) {
+            console.log("Чтение данных из базы...");
+            const transaction = db.transaction(["testResults"], "readonly");
+            const store = transaction.objectStore("testResults");
+            const request = store.getAll();
+    
+            request.onsuccess = (event) => {
+                const results = event.target.result;
+                console.log("Полученные результаты:", results); // Проверьте здесь
+    
+                if (results.length > 0) {
+                    renderResults(results);
+                } else {
+                    console.log("Нет результатов для отображения.");
+                }
+            };
+    
+            request.onerror = (event) => {
+                console.log("Ошибка при получении данных:", event);
+            };
+        } else {
+            console.log("База данных еще не открыта");
+        }
+    }
+    
+    
+    
+    function renderResults(results) {
+        const resultList = document.getElementById('resultsList');
+        resultList.innerHTML = ''; // Очистить перед вставкой новых данных
+    
+        if (results.length > 0) {
+            const lastResult = results[results.length - 1]; // Получаем последний результат
+            const listItem = document.createElement('li');
+            listItem.textContent = `Правильных ответов: ${lastResult.correctAnswers}, Неправильных ответов: ${lastResult.incorrectAnswers}, Дата: ${new Date(lastResult.timestamp).toLocaleString()}`;
+            resultList.appendChild(listItem);
+        } else {
+            console.log("Нет результатов для отображения.");
+        }
+    }
+    
+    
+    
+    window.addEventListener('load', () => {
+        console.log("Страница загружена, ждем 1 секунду перед отображением результатов.");
+        
+        setTimeout(() => {
+            displayTestResults();
+        }, 1000); // 3000 миллисекунд = 3 секунды
+    });
+    
+    
+    
+      </script>
 <script src="../static/scripts/auth.js"></script>
 <script src="../static/scripts/main.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" 

@@ -1,5 +1,5 @@
 const dbName = "UserAuthDB";
-const dbVersion = 1;
+const dbVersion = 2;
 let db;
 
 // Открытие или создание базы данных
@@ -20,7 +20,11 @@ request.onupgradeneeded = (event) => {
         const userStore = db.createObjectStore("users", { keyPath: "email" });
         userStore.createIndex("email", "email", { unique: true });
     }
+    if (!db.objectStoreNames.contains('testResults')) {
+        db.createObjectStore('testResults', { autoIncrement: true });
+    }
 };
+
 
 
 // Кастомные алерты

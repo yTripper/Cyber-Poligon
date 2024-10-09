@@ -109,7 +109,7 @@
       <div id="result-summary"></div>
       <p>Правильные ответы: <span id="correct-count"></span></p>
       <p>Неправильные ответы: <span id="incorrect-count"></span></p>
-        <button id="sendResultsBtn" class="btn btn-primary mt-3" style="display: none;" onclick="sendResults()">Отправить результаты</button>
+      <button id="submitResultsBtn" class="btn btn-primary d-none mt-3">Отправить результаты</button>
       <button id="retryBtn" class="btn btn-warning mt-3" onclick="retryTest()">Повторить тест</button>
     </div>
   </main>
@@ -233,8 +233,9 @@
 </div>
 </div>
 <!-- Конец тут -->
+<script src="../static/scripts/auth.js"></script>
 <script>
-      let currentQuestionIndex = 0;
+let currentQuestionIndex = 0;
   let correctAnswers = 0;
   let incorrectAnswers = 0;
   let userAnswers = [];
@@ -360,6 +361,7 @@
     const resultSummary = document.getElementById('result-summary');
     const correctCount = document.getElementById('correct-count');
     const incorrectCount = document.getElementById('incorrect-count');
+    const submitResultsBtn = document.getElementById('submitResultsBtn'); // Добавляем кнопку для отправки
 
     testContainer.style.display = 'none';
     resultContainer.style.display = 'block';
@@ -369,28 +371,67 @@
     incorrectAnswers = 0;
 
     userAnswers.forEach((answer, index) => {
-      resultHTML += `
-        <div>
-          <h5>Вопрос ${index + 1}</h5>
-          <p>${answer.question}</p>
-          <p><strong>Ваш ответ:</strong> ${answer.userAnswer ? 'Да' : 'Нет'}</p>
-          <p><strong>Правильный ответ:</strong> ${answer.correctAnswer ? 'Да' : 'Нет'}</p>
-          <p class="${answer.isCorrect ? 'correct' : 'incorrect'}">
-            ${answer.isCorrect ? 'Правильно!' : 'Ошибка!'}
-          </p>
-        </div>
-      `;
-      if (answer.isCorrect) {
-        correctAnswers++;
-      } else {
-        incorrectAnswers++;
-      }
+        resultHTML += `
+          <div>
+            <h5>Вопрос ${index + 1}</h5>
+            <p>${answer.question}</p>
+            <p><strong>Ваш ответ:</strong> ${answer.userAnswer ? 'Да' : 'Нет'}</p>
+            <p><strong>Правильный ответ:</strong> ${answer.correctAnswer ? 'Да' : 'Нет'}</p>
+            <p class="${answer.isCorrect ? 'correct' : 'incorrect'}">
+              ${answer.isCorrect ? 'Правильно!' : 'Ошибка!'}
+            </p>
+          </div>
+        `;
+        if (answer.isCorrect) {
+            correctAnswers++;
+        } else {
+            incorrectAnswers++;
+        }
     });
 
     resultSummary.innerHTML = resultHTML;
     correctCount.textContent = correctAnswers;
     incorrectCount.textContent = incorrectAnswers;
-  }
+
+    submitResultsBtn.classList.remove('d-none'); // Показываем кнопку отправки
+}
+
+function submitResults() {
+    if (db) {
+        const transaction = db.transaction(["testResults"], "readwrite");
+        const store = transaction.objectStore("testResults");
+
+        // Проверьте, что значения корректные
+        console.log("Correct Answers:", correctAnswers);
+        console.log("Incorrect Answers:", incorrectAnswers);
+
+        const resultData = {
+            correctAnswers: correctAnswers || 0, // Если нет данных, ставим 0
+            incorrectAnswers: incorrectAnswers || 0,
+            timestamp: new Date().toISOString()
+        };
+
+        const request = store.add(resultData);
+        request.onsuccess = () => {
+            console.log("Результаты успешно отправлены в базу данных.");
+        };
+        request.onerror = (event) => {
+            console.log("Ошибка при отправке результатов в базу данных:", event);
+        };
+    } else {
+        console.log("База данных не открыта.");
+    }
+// Добавьте этот код после успешной записи данных в базу в submitResults
+const transaction = db.transaction(["testResults"], "readonly");
+const store = transaction.objectStore("testResults");
+const request = store.getAll();
+request.onsuccess = (event) => {
+    const results = event.target.result;
+    console.log("Проверка данных в базе:", results); // Проверим, что данные записались
+};
+
+}
+
 
   function retryTest() {
     currentQuestionIndex = 0;
@@ -408,8 +449,9 @@
 
   // Инициализация первого вопроса при загрузке страницы
   document.addEventListener('DOMContentLoaded', renderQuestion);
+  document.getElementById('submitResultsBtn').addEventListener('click', submitResults); // Добавляем обработчик
+  
 </script>
-<script src="../static/scripts/auth.js"></script>
 <script src="../static/scripts/main.js"></script>
   <!-- Скрипты Bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
