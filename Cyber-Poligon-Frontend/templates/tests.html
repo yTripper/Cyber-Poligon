@@ -56,13 +56,13 @@
       <div class="collapse navbar-collapse ms-2" id="navbarNav">
           <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                  <a class="nav-link text-light" aria-current="page" href="index.html">Главная</a>
+                  <a class="nav-link" aria-current="page" href="index.html">Главная</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link text-light" href="training.html">Тренировка</a>
+                  <a class="nav-link" href="training.html">Тренировка</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link text-light" href="courses.html">Курсы</a>
+                  <a class="nav-link" href="courses.html">Курсы</a>
               </li>
               <li class="nav-item">
                   <a class="nav-link text-light" href="resources.html">Ресурсы</a>
@@ -414,6 +414,7 @@ function submitResults() {
         const request = store.add(resultData);
         request.onsuccess = () => {
             console.log("Результаты успешно отправлены в базу данных.");
+            showCustomAlert("Результаты успешно отправлены в базу данных.", 'success');
         };
         request.onerror = (event) => {
             console.log("Ошибка при отправке результатов в базу данных:", event);
