@@ -9,32 +9,48 @@
      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <nav-link text-decoration-none></nav-link>
 </head>
+<div id="customAlert" class="custom-alert d-none">
+    <span id="customAlertMessage"></span>
+</div>
 <body class="body__background text-light">
-    <nav class="w-100 h-auto navbar position-absolute navbar navbar-expand-md ">
-        <h1 class="ms-2 my-3"><a class="text-light" href="index.html">Киберполигон</a></h1>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="border-0"><img src="../static/img/menu-button.png" width="40rem"></span>
-          </button>
-          <div class="collapse navbar-collapse ms-2" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
+  <nav class="w-100 h-auto navbar position-absolute navbar navbar-expand-md">
+    <h1 class="ms-2 my-3"><a class="text-light" href="index.html">Киберполигон</a></h1>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="border-0"><img src="../static/img/menu-button.png" width="40rem"></span>
+    </button>
+    <div class="collapse navbar-collapse ms-2" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
                 <a class="nav-link text-light" aria-current="page" href="index.html">Главная</a>
-              </li>
-              <li class="nav-item">
+            </li>
+            <li class="nav-item">
                 <a class="nav-link text-light" href="training.html">Тренировка</a>
-              </li>
-              <li class="nav-item">
+            </li>
+            <li class="nav-item">
                 <a class="nav-link text-light" href="courses.html">Курсы</a>
-              </li>
-              <li class="nav-item">
+            </li>
+            <li class="nav-item">
                 <a class="nav-link text-light" href="resources.html">Ресурсы</a>
-              </li>
-              <li class="nav-item">
+            </li>
+
+            <!-- Кнопка "Войти", которая заменяется на выпадающий список профиля -->
+            <li class="nav-item" id="loginLink">
                 <button class="nav-link text-decoration-underline text-light me-2 btn" data-bs-toggle="modal" data-bs-target="#loginModal">Войти</button>
-              </li>
-            </ul>
-          </div>
-    </nav>
+            </li>
+
+            <!-- Выпадающий список профиля -->
+            <li class="nav-item dropdown" id="profileDropdown" style="display: none;">
+                <a class="nav-link dropdown-toggle text-light" href="#" id="profileMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span id="usernameDisplay">Профиль</span>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileMenu">
+                    <li><a class="dropdown-item" href="personal_account.html">Профиль</a></li>
+                    <li><a class="dropdown-item" href="#" id="logoutButton">Выйти</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
     <header class="d-flex justify-content-center align-items-center primary__background" style="height: 100vh;">
         <div class="text-center primary-text__background p-3">
             <h2>Добро пожаловать на Киберполигон!</h2>
@@ -95,6 +111,7 @@
         </div>
     </footer>
 </body>
+
 <!-- Форма регистрации -->
 <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
